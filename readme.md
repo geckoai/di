@@ -34,9 +34,9 @@ export class Application {
 > config.service.ts
 
 ```ts
-import {QDInjectable} from "../../src";
+import {GDInjectable} from "../../src";
 
-@QDInjectable()
+@GDInjectable()
 export class ConfigService {
   private name: string = "alice"
   public setName(name: string) {
