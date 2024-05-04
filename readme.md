@@ -16,9 +16,9 @@ yarn add reflect-metadata @geckoai/class-mirror @geckoai/di
 ### Crate application
 
 ```ts
-import {QDModule} from "../../src";
+import {GDModule} from "../../src";
 
-@QDModule({
+@GDModule({
   imports: [],
   providers: [],
   exports: [],
@@ -51,10 +51,10 @@ export class ConfigService {
 > config.module.ts
 
 ```ts
-import {QDModule} from "../../src";
+import {GDModule} from "../../src";
 import {ConfigService} from "./config.service";
 
-@QDModule({
+@GDModule({
   // provider services
   providers: [ConfigService],
   exports: [ConfigService],
@@ -69,11 +69,11 @@ export class Config {
 
 ```ts
 import {assert} from 'chai';
-import {QDModule} from "../../src";
+import {GDModule} from "../../src";
 import {Config} from "./config.module";
 import {ConfigService} from "./config.service";
 
-@QDModule({
+@GDModule({
   imports: [Config],
   providers: [],
   exports: [],

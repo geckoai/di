@@ -1,8 +1,8 @@
-import {QDModule} from "../../src";
+import {GDModule} from "../../src";
 import {Config} from "./config.module";
 import {ConfigService} from "./config.service";
 
-@QDModule({
+@GDModule({
   imports: [Config],
   providers: [],
   exports: [],

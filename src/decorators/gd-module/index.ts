@@ -27,7 +27,7 @@ import { GDModuleDecorate, GDModuleOptions } from './decorate';
 /**
  * GDModule
  * @author RanYunLong<549510622@qq.com>
- * QDModule decorator
+ * GDModule decorator
  * @param options
  * @constructor
  */

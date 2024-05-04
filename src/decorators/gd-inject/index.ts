@@ -26,9 +26,9 @@ import { InjectionToken } from '../../injection-token';
 
 /**
  * @author RanYunLong<549510622@qq.com>
- * @function QDInject decorator
+ * @function GDInject decorator
  * @constructor
  */
-export function QDInject(token: InjectionToken): ParameterDecorator {
+export function GDInject(token: InjectionToken): ParameterDecorator {
   return ParameterMirror.createDecorator(new GDInjectDecorate(token));
 }

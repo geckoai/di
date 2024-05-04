@@ -126,7 +126,7 @@ export class EnvironmentInjector extends Injector {
     const decorates = reflect.getDecorates(GDModuleDecorate);
     if (!decorates.length) {
       console.warn(
-        `The Service ${module.name} not used "@QDModule()" decorator, please use ClassDecorator "@QDModule()" in your module class.`
+        `The Service ${module.name} not used "@GDModule()" decorator, please use ClassDecorator "@GDModule()" in your module class.`
       );
     }
     const parameters = reflect.getParameters();
