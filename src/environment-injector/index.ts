@@ -1,6 +1,6 @@
 /**
  * MIT License
- * Copyright (c) 2021 RanYunLong<549510622@qq.com> @quick-toolkit/di
+ * Copyright (c) 2021 RanYunLong<549510622@qq.com> @geckoai/di
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
  * in the Software without restriction, including without limitation the rights
@@ -20,12 +20,12 @@
  * SOFTWARE.
  */
 
-import { ClassMirror, ParameterDecorate } from '@quick-toolkit/class-mirror';
+import { ClassMirror, ParameterDecorate } from '@geckoai/class-mirror';
 import { Injector } from '../injector';
 import { Provider, ProviderToken, StaticProvider, Type } from '../interfaces';
-import { QDModuleDecorate } from '../decorators';
-import { QDInjectableDecorate } from '../decorators/qd-injectable/decorate';
-import { QDInjectDecorate } from '../decorators/qd-inject/decorate';
+import { GDModuleDecorate } from '../decorators';
+import { GDInjectableDecorate } from '../decorators/gd-injectable/decorate';
+import { GDInjectDecorate } from '../decorators/gd-inject/decorate';
 
 /**
  * @author RanYunLong<549510622@qq.com>
@@ -81,7 +81,7 @@ export class EnvironmentInjector extends Injector {
    */
   public static deps(type: Type<any>): ProviderToken<any>[] {
     const reflect = ClassMirror.reflect(type);
-    const decorates = reflect.getDecorates(QDInjectableDecorate);
+    const decorates = reflect.getDecorates(GDInjectableDecorate);
     if (!decorates.length) {
       console.warn(
         `The Service ${type.name} not used "@QDInjectable()" decorator, please use ClassDecorator "@QDInjectable()" in your service class.`
@@ -123,7 +123,7 @@ export class EnvironmentInjector extends Injector {
       }
     }
     const reflect = ClassMirror.reflect(module);
-    const decorates = reflect.getDecorates(QDModuleDecorate);
+    const decorates = reflect.getDecorates(GDModuleDecorate);
     if (!decorates.length) {
       console.warn(
         `The Service ${module.name} not used "@QDModule()" decorator, please use ClassDecorator "@QDModule()" in your module class.`
@@ -216,6 +216,6 @@ export class EnvironmentInjector extends Injector {
 }
 
 EnvironmentInjector.parameterDecorateTokens.set(
-  QDInjectDecorate,
+  GDInjectDecorate,
   (m) => m.metadata
 );

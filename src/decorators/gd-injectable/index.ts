@@ -1,6 +1,6 @@
 /**
  * MIT License
- * Copyright (c) 2021 RanYunLong<549510622@qq.com> @quick-toolkit/di
+ * Copyright (c) 2021 RanYunLong<549510622@qq.com> @geckoai/di
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
  * in the Software without restriction, including without limitation the rights
@@ -19,17 +19,15 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-import { ClassMirror } from '@quick-toolkit/class-mirror';
-import { QDModuleDecorate, QDModuleOptions } from './decorate';
 
-export { QDModuleDecorate, QDModuleOptions };
+import { ClassMirror } from '@geckoai/class-mirror';
+import { GDInjectableDecorate } from './decorate';
 
 /**
  * @author RanYunLong<549510622@qq.com>
- * QDModule decorator
- * @param options
+ * @function GDInjectable decorator
  * @constructor
  */
-export function QDModule(options: QDModuleOptions = {}): ClassDecorator {
-  return ClassMirror.createDecorator(new QDModuleDecorate(options));
+export function GDInjectable(): ClassDecorator {
+  return ClassMirror.createDecorator(new GDInjectableDecorate(null));
 }

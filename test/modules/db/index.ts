@@ -1,7 +1,7 @@
-import {QDModule} from "../../../src";
+import {GDModule} from "../../../src";
 import {StorageService} from "./services/storageService";
 
-@QDModule({
+@GDModule({
   providers: [StorageService],
   exports: [StorageService]
 })

@@ -1,14 +1,14 @@
 # di
-The @quick-toolkit/di a tiny inversion of control container for JavaScript.
+The @geckoai/di a tiny inversion of control container for JavaScript.
 
-[![npm (scoped)](https://img.shields.io/npm/v/@quick-toolkit/di)](https://www.npmjs.com/package/@quick-toolkit/di)
+[![npm (scoped)](https://img.shields.io/npm/v/@geckoai/di)](https://www.npmjs.com/package/@geckoai/di)
 
 ## Installing
 
 ```shell
-npm i reflect-metadata @quick-toolkit/class-mirror @quick-toolkit/di
+npm i reflect-metadata @geckoai/class-mirror @geckoai/di
 #or
-yarn add reflect-metadata @quick-toolkit/class-mirror @quick-toolkit/di
+yarn add reflect-metadata @geckoai/class-mirror @geckoai/di
 ```
 
 ## Example Usage
@@ -91,12 +91,12 @@ asset.equal(app.configService, config.configService);
 
 
 ## Documentation
-- [ApiDocs](https://quick-toolkit.github.io/di/)
-- [samples](https://github.com/quick-toolkit/di/tree/master/sample)
+- [ApiDocs](https://geckoai.github.io/di/)
+- [samples](https://github.com/geckoai/di/tree/master/sample)
 
 
 ## Issues
-Create [issues](https://github.com/quick-toolkit/di/issues) in this repository for anything related to the Class Decorator. When creating issues please search for existing issues to avoid duplicates.
+Create [issues](https://github.com/geckoai/di/issues) in this repository for anything related to the Class Decorator. When creating issues please search for existing issues to avoid duplicates.
 
 
 ## License
@@ -104,7 +104,7 @@ Create [issues](https://github.com/quick-toolkit/di/issues) in this repository f
 ```
 /**
  * MIT License
- * Copyright (c) 2021 RanYunLong<549510622@qq.com> @quick-toolkit/di
+ * Copyright (c) 2021 RanYunLong<549510622@qq.com> @geckoai/di
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
  * in the Software without restriction, including without limitation the rights
@@ -125,4 +125,4 @@ Create [issues](https://github.com/quick-toolkit/di/issues) in this repository f
  */
 ```
 
-Licensed under the [MIT](https://github.com/quick-toolkit/di/blob/master/LICENSE) License.
+Licensed under the [MIT](https://github.com/geckoai/di/blob/master/LICENSE) License.

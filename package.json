@@ -1,7 +1,7 @@
 {
-  "name": "@quick-toolkit/di",
+  "name": "@geckoai/di",
   "version": "1.2.2",
-  "description": "The @quick-toolkit/di a tiny inversion of control container for JavaScript.",
+  "description": "The @geckoai/di a tiny inversion of control container for JavaScript.",
   "main": "dist/cjs",
   "types": "dist/types",
   "scripts": {
@@ -15,19 +15,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/quick-toolkit/di.git"
+    "url": "git+https://github.com/geckoai/di.git"
   },
   "keywords": [
     "di",
-    "@quick-toolkit",
-    "@quick-toolkit/di"
+    "@geckoai",
+    "@geckoai/di"
   ],
   "author": "RanYunLong<549510622@qq.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/quick-toolkit/di/issues"
+    "url": "https://github.com/geckoai/di/issues"
   },
-  "homepage": "https://github.com/quick-toolkit/di#readme",
+  "homepage": "https://github.com/geckoai/di#readme",
   "devDependencies": {
     "@babel/core": "^7.16.0",
     "@babel/preset-env": "^7.16.4",
@@ -52,6 +52,6 @@
     "webpack-cli": "^4.9.1"
   },
   "dependencies": {
-    "@quick-toolkit/class-mirror": "^1.0.5"
+    "@geckoai/class-mirror": "^1.0.0"
   }
 }

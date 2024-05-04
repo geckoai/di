@@ -1,11 +1,11 @@
-import {QDModule} from "../src";
+import {GDModule} from "../src";
 import {UserService} from "./services/user-service";
 import {Db} from "./modules/db";
 import {User} from "./modules/user";
 import {StorageService} from "./modules/db/services/storageService";
 import {RoleService} from "./services/role-service";
 
-@QDModule({
+@GDModule({
   imports: [Db, User],
   providers: [UserService, RoleService]
 })

@@ -1,2 +1,3 @@
-export * from './qd-module';
-export * from './qd-injectable';
+export * from './gd-module';
+export * from './gd-inject';
+export * from './gd-injectable';

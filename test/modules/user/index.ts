@@ -1,7 +1,7 @@
-import {QDModule} from "../../../src";
+import {GDModule} from "../../../src";
 import {Db} from "../db";
 
-@QDModule({
+@GDModule({
   imports: [Db]
 })
 export class User {

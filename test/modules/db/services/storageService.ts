@@ -1,6 +1,6 @@
-import {QDInjectable} from "../../../../src";
+import {GDInjectable} from "../../../../src";
 
-@QDInjectable()
+@GDInjectable()
 export class StorageService {
   private name: number = new Date().getTime()
 

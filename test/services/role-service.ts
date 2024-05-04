@@ -1,7 +1,7 @@
-import {QDInjectable} from "../../src";
+import {GDInjectable} from "../../src";
 import {UserService} from "./user-service";
 
-@QDInjectable()
+@GDInjectable()
 export class RoleService {
   public constructor(public userService: UserService) {
   }

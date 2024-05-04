@@ -1,6 +1,6 @@
-import {QDInjectable} from "../../src";
+import {GDInjectable} from "../../src";
 
-@QDInjectable()
+@GDInjectable()
 export class UserService {
   public getName() {
     return '小明';

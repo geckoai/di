@@ -1,6 +1,6 @@
 /**
  * MIT License
- * Copyright (c) 2021 RanYunLong<549510622@qq.com> @quick-toolkit/di
+ * Copyright (c) 2021 RanYunLong<549510622@qq.com> @geckoai/di
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
  * in the Software without restriction, including without limitation the rights
@@ -19,11 +19,17 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-
-import { ParameterDecorate } from '@quick-toolkit/class-mirror';
-import { InjectionToken } from '../../injection-token';
+import { ClassDecorate } from '@geckoai/class-mirror';
+import { Provider, Type } from '../../interfaces';
 
 /**
- *
+ * @author RanYunLong<549510622@qq.com>
+ * @class GDModuleDecorate
  */
-export class QDInjectDecorate extends ParameterDecorate<InjectionToken> {}
+export class GDModuleDecorate extends ClassDecorate<GDModuleOptions> {}
+
+export interface GDModuleOptions {
+  imports?: Type<any>[];
+  providers?: Provider[];
+  exports?: Provider[];
+}
