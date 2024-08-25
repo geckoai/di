@@ -22,8 +22,6 @@
 import { ClassMirror } from '@geckoai/class-mirror';
 import { GDModuleDecorate, GDModuleOptions } from './decorate';
 
-
-
 /**
  * GDModule
  * @author RanYunLong<549510622@qq.com>
@@ -35,4 +33,5 @@ export function GDModule(options: GDModuleOptions = {}): ClassDecorator {
   return ClassMirror.createDecorator(new GDModuleDecorate(options));
 }
 
-export { GDModuleDecorate, GDModuleOptions };
+export { GDModuleDecorate };
+export type { GDModuleOptions };

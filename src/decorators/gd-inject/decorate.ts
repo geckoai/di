@@ -24,6 +24,7 @@ import { ParameterDecorate } from '@geckoai/class-mirror';
 import { InjectionToken } from '../../injection-token';
 
 /**
- *
+ * @author RanYunLong<549510622@qq.com>
+ * @class GDInjectDecorate
  */
 export class GDInjectDecorate extends ParameterDecorate<InjectionToken> {}

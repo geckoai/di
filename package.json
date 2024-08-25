@@ -1,6 +1,6 @@
 {
   "name": "@geckoai/di",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "The @geckoai/di a tiny inversion of control container for JavaScript.",
   "main": "dist/cjs",
   "types": "dist/types",

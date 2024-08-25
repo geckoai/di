@@ -62,13 +62,16 @@ export abstract class Injector {
             `The deps ${Helpers.toString(deps)} is not a array.`
           );
         }
-        deps.forEach((dep) => this.lookupProviders(dep));
+        for (let dep of deps) {
+          this.lookupProviders(dep)
+        }
       }
+
       // It's a value provider
       if (useValue) {
         this.provide.set(provide, useValue);
       } else if (useClass) {
-        const _ = Injector.construct(
+        const _ = this.provide.get(provide) || Injector.construct(
           useClass,
           deps.map((dep) => this.provide.get(dep))
         );
@@ -79,7 +82,7 @@ export abstract class Injector {
             `The factory ${Helpers.toString(useFactory)} is not a function.`
           );
         }
-        const _ = useFactory(...deps.map((dep) => this.provide.get(dep)));
+        const _ = this.provide.get(provide) || useFactory(...deps.map((dep) => this.provide.get(dep)));
         this.provide.set(provide, _);
       }
     }
@@ -93,6 +96,7 @@ export abstract class Injector {
   public get<T>(token: ProviderToken<T>, notFoundValue?: T): T | undefined {
     if (!this.provide.has(token)) {
       this.lookupProviders(token);
+
       return this.provide.get(token);
     }
     return this.provide.get(token) || notFoundValue;
