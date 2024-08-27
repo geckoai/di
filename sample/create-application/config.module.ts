@@ -2,7 +2,7 @@ import {GDModule} from "../../src";
 import {ConfigService} from "./config.service";
 
 @GDModule({
-  // provider services
+  // provider providers
   providers: [ConfigService],
   exports: [ConfigService],
 })
