@@ -1,11 +1,13 @@
-import {QDInjectable} from "../../src";
+import { GDInjectable } from "../../src";
 
-@QDInjectable()
+@GDInjectable()
 export class ConfigService {
-  private name: string = "alice"
+  private name: string = "alice";
+
   public setName(name: string) {
     this.name = name;
   }
+
   public getName(): string {
     return this.name;
   }

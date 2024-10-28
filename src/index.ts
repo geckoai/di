@@ -19,11 +19,9 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-
-export * from './decorators';
-export * from './environment-injector';
-export * from './interfaces';
-export * from './injector';
-export * from './injection-token';
-export * from './helpers';
-
+export * from "./decorators";
+export * from "./environment-injector";
+export * from "./interfaces";
+export * from "./injector";
+export * from "./injection-token";
+export * from "./helpers";

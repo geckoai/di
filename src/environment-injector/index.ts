@@ -20,22 +20,22 @@
  * SOFTWARE.
  */
 
-import { ClassMirror, ParameterDecorate } from '@geckoai/class-mirror';
-import { Injector } from '../injector';
-import { Provider, ProviderToken, StaticProvider, Type } from '../interfaces';
-import { GDModuleDecorate } from '../decorators';
-import { GDInjectableDecorate } from '../decorators/gd-injectable/decorate';
-import { GDInjectDecorate } from '../decorators/gd-inject/decorate';
+import { ClassMirror, ParameterDecorate } from "@geckoai/class-mirror";
+import { Injector } from "../injector";
+import { Provider, ProviderToken, StaticProvider, Type } from "../interfaces";
+import { GDModuleDecorate } from "../decorators";
+import { GDInjectableDecorate } from "../decorators/gd-injectable/decorate";
+import { GDInjectDecorate } from "../decorators/gd-inject/decorate";
 
 /**
  * @author RanYunLong<549510622@qq.com>
  * @class BaseInjector
  */
 export class EnvironmentInjector extends Injector {
-  private static $scope: Map<Symbol, Map<Type<any>, EnvironmentInjector>> =
+  private static $scope: Map<symbol, Map<Type<any>, EnvironmentInjector>> =
     new Map();
 
-  public static $collection: Map<object, Symbol> = new Map();
+  public static $collection: Map<object, symbol> = new Map();
 
   public static parameterDecorateTokens: Map<
     Type<ParameterDecorate>,
@@ -84,7 +84,7 @@ export class EnvironmentInjector extends Injector {
     const decorates = reflect.getDecorates(GDInjectableDecorate);
     if (!decorates.length) {
       console.warn(
-        `The Service ${type.name} not used "@QDInjectable()" decorator, please use ClassDecorator "@QDInjectable()" in your service class.`
+        `The Service ${type.name} not used "@GDInjectable()" decorator, please use ClassDecorator "@GDInjectable()" in your service class.`,
       );
     }
     const parameters = reflect.getParameters();
@@ -113,7 +113,7 @@ export class EnvironmentInjector extends Injector {
    */
   public static reflect<T>(
     module: Type<T>,
-    scope: Symbol
+    scope: symbol,
   ): EnvironmentInjector {
     const $scope = EnvironmentInjector.$scope.get(scope);
     if ($scope) {
@@ -126,14 +126,13 @@ export class EnvironmentInjector extends Injector {
     const decorates = reflect.getDecorates(GDModuleDecorate);
     if (!decorates.length) {
       console.warn(
-        `The Service ${module.name} not used "@GDModule()" decorator, please use ClassDecorator "@GDModule()" in your module class.`
+        `The Service ${module.name} not used "@GDModule()" decorator, please use ClassDecorator "@GDModule()" in your module class.`,
       );
     }
     const parameters = reflect.getParameters();
     const _providers: Set<Provider> = new Set();
     const _imports: Set<Type<any>> = new Set();
     const _exports: Set<Provider> = new Set();
-
 
     // 解析依赖
     decorates.forEach((decorate) => {
@@ -208,10 +207,10 @@ export class EnvironmentInjector extends Injector {
    * @function run
    * Run application
    */
-  public static run<T extends {}>(application: Type<T>, scope?: Symbol): T {
+  public static run<T extends {}>(application: Type<T>, scope?: symbol): T {
     const $scope = scope || Symbol(application.name);
     const app = EnvironmentInjector.reflect(application, $scope).get(
-      application
+      application,
     ) as T;
     EnvironmentInjector.$collection.set(app, $scope);
     return app;
@@ -232,5 +231,5 @@ export class EnvironmentInjector extends Injector {
 
 EnvironmentInjector.parameterDecorateTokens.set(
   GDInjectDecorate,
-  (m) => m.metadata
+  (m) => m.metadata,
 );

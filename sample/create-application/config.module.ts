@@ -1,5 +1,5 @@
-import {GDModule} from "../../src";
-import {ConfigService} from "./config.service";
+import { GDModule } from "../../src";
+import { ConfigService } from "./config.service";
 
 @GDModule({
   // provider providers
@@ -8,7 +8,7 @@ import {ConfigService} from "./config.service";
 })
 export class Config {
   constructor(private service: ConfigService) {
-    service.getName() // alice
-    service.setName('bob');
+    service.getName(); // alice
+    service.setName("bob");
   }
 }
